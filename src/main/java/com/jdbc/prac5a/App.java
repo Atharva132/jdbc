@@ -1,5 +1,7 @@
 package com.jdbc.prac5a;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -18,10 +20,27 @@ public class App
         
         StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
         
-        Student stud1 = new Student();
-        stud1.setId(02);
-        stud1.setName("Akhilesh");
-        int result = studentDao.insert(stud1);
-        System.out.println(result);
+//        Student stud1 = new Student();
+//        stud1.setId(03);
+//        stud1.setName("Rutik");
+//        int result = studentDao.insert(stud1);
+//        System.out.println(result);
+        
+//        Student stud2 = new Student();
+//        stud2.setId(03);
+//        stud2.setName("Suraj");
+//        int result = studentDao.change(stud2);
+//        System.out.println(result);
+        
+//          int result = studentDao.delete(02);
+//          System.out.println(result);
+          
+//        Student stud3 = studentDao.getStudent(01);  
+//        System.out.println(stud3);
+        
+        List<Student> allStudents = studentDao.getAllStuds();
+        for(Student s : allStudents) {
+        	System.out.println(s);
+        }
     }
 }
